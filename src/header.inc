@@ -34,7 +34,8 @@ DB $DD, $DC, $99, $9F, $BB, $B9, $33, $3E
 ;DS 11      ; $0134-$013E: The title(11 letters).
 SECTION "manufacturer", HOME[$013F]
 DS 4        ; $013F-$0142: The manufacturer code.
-DB $00      ; $0143: Gameboy Color compatibility flag.
+DB $C0      ; $0143: ゲームボーイカラー互換性フラグ
+			; 	$00:旧ゲームボーイ, $80:カラー対応, $C0 : カラー専用
 DB "00"     ; $0144-$0145: "New" Licensee Code, a two character name.
 DB $00      ; $0146: Super Gameboy compatibility flag.
 DB $00      ; $0147: Cartridge type. Either no ROM or MBC5 is recommended.

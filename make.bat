@@ -1,9 +1,9 @@
-rem ã‚‚ã—ã€ãƒ“ãƒ«ãƒ‰ã‚’è¡Œã†å ´åˆã¯ä»¥ä¸‹ã®pathã‚’å„è‡ªã®ç’°å¢ƒã«åˆã‚ã›ã¦ãã ã•ã„ã€‚
-
-path=C:\rgbds\bin\
-
+@echo off
+rem ƒrƒ‹ƒh‚ğs‚¤ê‡‚ÍˆÈ‰º‚Ì PATH ‚ğŠe©‚ÌŠÂ‹«‚É‡‚í‚¹‚Ä‚­‚¾‚³‚¢B
+set PATH=PATH;
 set TITLE="GBdeKIKAIGO"
-rgbasm -o	Fonts2.o	Fonts2.z80
-rgbasm -o	%TITLE%.o	%TITLE%.z80
-rgblink -m %TITLE%.map -n %TITLE%.sym -o %TITLE%.gb %TITLE%.o Fonts2.o
-rgbfix -p0 -v %TITLE%.gb
+
+rgbasm -o obj/Fonts2.o src/Fonts2.z80
+rgbasm -o obj/%TITLE%.o src/%TITLE%.z80
+rgblink -m obj/%TITLE%.map -n %TITLE%.sym -o %TITLE%.gbc obj/%TITLE%.o obj/Fonts2.o
+rgbfix -p0 -v %TITLE%.gbc
